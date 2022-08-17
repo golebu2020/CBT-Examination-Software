@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AdminModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="AdminModelStoreContainer">
+          <EntitySet Name="AdminTable" EntityType="AdminModel.Store.AdminTable" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PictureTable" EntityType="AdminModel.Store.PictureTable" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StudentExamTable" EntityType="AdminModel.Store.StudentExamTable" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Table" EntityType="AdminModel.Store.Table" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="AdminTable">
+          <Key>
+            <PropertyRef Name="AdminId" />
+          </Key>
+          <Property Name="AdminId" Type="int" Nullable="false" />
+          <Property Name="AdminPassword" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="PictureTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Picture" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="StudentExamTable">
+          <Key>
+            <PropertyRef Name="StudentId" />
+          </Key>
+          <Property Name="StudentId" Type="int" Nullable="false" />
+          <Property Name="StudentName" Type="nvarchar(max)" />
+          <Property Name="StudentSurname" Type="nvarchar(max)" />
+          <Property Name="StudentSet" Type="nvarchar(max)" />
+          <Property Name="StudentSubject1" Type="nvarchar(max)" />
+          <Property Name="StudentSubject2" Type="nvarchar(max)" />
+          <Property Name="StudentSubject3" Type="nvarchar(max)" />
+          <Property Name="StudentScore1" Type="int" />
+          <Property Name="StudentScore2" Type="int" />
+          <Property Name="StudentScore3" Type="int" />
+          <Property Name="StudentTotalScore" Type="int" />
+        </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="StudentId" />
+          </Key>
+          <Property Name="StudentId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Surname" Type="nvarchar(max)" />
+          <Property Name="ExamID" Type="nvarchar(max)" />
+          <Property Name="ExamType" Type="nvarchar(max)" />
+          <Property Name="Passport" Type="varbinary(max)" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AdminModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="AdminEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="AdminTables" EntityType="AdminModel.AdminTable" />
+          <EntitySet Name="Tables" EntityType="AdminModel.Table" />
+          <EntitySet Name="StudentExamTables" EntityType="AdminModel.StudentExamTable" />
+          <EntitySet Name="PictureTables" EntityType="AdminModel.PictureTable" />
+        </EntityContainer>
+        <EntityType Name="AdminTable">
+          <Key>
+            <PropertyRef Name="AdminId" />
+          </Key>
+          <Property Name="AdminId" Type="Int32" Nullable="false" />
+          <Property Name="AdminPassword" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="StudentId" />
+          </Key>
+          <Property Name="StudentId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Surname" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ExamID" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ExamType" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Passport" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="StudentExamTable">
+          <Key>
+            <PropertyRef Name="StudentId" />
+          </Key>
+          <Property Type="Int32" Name="StudentId" Nullable="false" />
+          <Property Type="String" Name="StudentName" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="StudentSurname" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="StudentSet" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="StudentSubject1" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="StudentSubject2" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="StudentSubject3" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="StudentScore1" />
+          <Property Type="Int32" Name="StudentScore2" />
+          <Property Type="Int32" Name="StudentScore3" />
+          <Property Type="Int32" Name="StudentTotalScore" />
+        </EntityType>
+        <EntityType Name="PictureTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Binary" Name="Picture" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AdminModelStoreContainer" CdmEntityContainer="AdminEntities">
+          <EntitySetMapping Name="AdminTables">
+            <EntityTypeMapping TypeName="AdminModel.AdminTable">
+              <MappingFragment StoreEntitySet="AdminTable">
+                <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+                <ScalarProperty Name="AdminPassword" ColumnName="AdminPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tables">
+            <EntityTypeMapping TypeName="AdminModel.Table">
+              <MappingFragment StoreEntitySet="Table">
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="ExamID" ColumnName="ExamID" />
+                <ScalarProperty Name="ExamType" ColumnName="ExamType" />
+                <ScalarProperty Name="Passport" ColumnName="Passport" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentExamTables">
+            <EntityTypeMapping TypeName="AdminModel.StudentExamTable">
+              <MappingFragment StoreEntitySet="StudentExamTable">
+                <ScalarProperty Name="StudentTotalScore" ColumnName="StudentTotalScore" />
+                <ScalarProperty Name="StudentScore3" ColumnName="StudentScore3" />
+                <ScalarProperty Name="StudentScore2" ColumnName="StudentScore2" />
+                <ScalarProperty Name="StudentScore1" ColumnName="StudentScore1" />
+                <ScalarProperty Name="StudentSubject3" ColumnName="StudentSubject3" />
+                <ScalarProperty Name="StudentSubject2" ColumnName="StudentSubject2" />
+                <ScalarProperty Name="StudentSubject1" ColumnName="StudentSubject1" />
+                <ScalarProperty Name="StudentSet" ColumnName="StudentSet" />
+                <ScalarProperty Name="StudentSurname" ColumnName="StudentSurname" />
+                <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PictureTables">
+            <EntityTypeMapping TypeName="AdminModel.PictureTable">
+              <MappingFragment StoreEntitySet="PictureTable">
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

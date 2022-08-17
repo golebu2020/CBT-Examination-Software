@@ -1,0 +1,7 @@
+1.install dotnet 4.5
+2.install SqlLocalDB.MSI
+3.install the setup.exe file
+4.Copy the VG_General_Objectives## to the c drive
+5.Restart your system and fireup the application to start
+Note: The following specified applications and setup can be found in the 
+application folder

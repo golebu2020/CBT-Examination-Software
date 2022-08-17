@@ -1,0 +1,2416 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:ZwitsTestEngine" mc:Ignorable="d" x:Class="ZwitsTestEngine.MainWindow"
+        Title="MainWindow"  Width="{DynamicResource {x:Static SystemParameters.MaximizedPrimaryScreenWidthKey}}" Height="{DynamicResource {x:Static SystemParameters.FullPrimaryScreenHeightKey}}" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" WindowState="Maximized" Loaded="Window_Loaded_1">
+    <Window.Resources>
+        <CollectionViewSource x:Key="tableViewSource" d:DesignSource="{d:DesignInstance {x:Type local:Table}, CreateList=True}"/>
+    </Window.Resources>
+    <Grid Background="White" DataContext="{StaticResource tableViewSource}">
+        <TabControl x:Name="tabRoot" HorizontalAlignment="Left" Height="718" VerticalAlignment="Bottom" Width="1381" Margin="1,0,0,0" Background="White" OpacityMask="Black" BorderBrush="#FFE5E5E5" Grid.ColumnSpan="1" SelectionChanged="tabRoot_SelectionChanged" PreviewKeyDown="tabRoot_PreviewKeyDown">
+            <TabItem x:Name="Number1" Header="TabItem" FontSize="16" Margin="-4,-2,0,26">
+                <Grid Background="White" Margin="0,-82,-11,-7">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Canvas HorizontalAlignment="Left" Height="461" Margin="1197,49,0,0" VerticalAlignment="Top" Width="8" Background="#FF143006">
+                        <Canvas.Effect>
+                            <DropShadowEffect/>
+                        </Canvas.Effect>
+                    </Canvas>
+
+
+
+                    <Grid x:Name ="MainPageTab" HorizontalAlignment="Left" Height="551" Margin="322,132,0,0" VerticalAlignment="Top" Width="667">
+                        <Grid.Effect>
+                            <DropShadowEffect BlurRadius="30" ShadowDepth="12"/>
+                        </Grid.Effect>
+                        <Grid.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0"/>
+                                <GradientStop Color="#FFA85757" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Grid.Background>
+                        <Label Content="Login" HorizontalAlignment="Left" Height="51" Margin="284,11,0,0" VerticalAlignment="Top" Width="95" FontFamily="Times New Roman" FontSize="30" Foreground="#FFF5F3F3" FontWeight="Bold" FontStyle="Italic">
+                            <Label.Effect>
+                                <DropShadowEffect/>
+                            </Label.Effect>
+                        </Label>
+                        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="33" Margin="1045,-183,-411,0" Stroke="#FFFBF8F8" VerticalAlignment="Top" Width="33"/>
+                        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="33" Margin="1125,11,-491,0" Stroke="#FFFBF9F9" VerticalAlignment="Top" Width="33"/>
+                        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="33" Margin="1085,-93,-451,0" Stroke="#FFFBF9F9" VerticalAlignment="Top" Width="33"/>
+                        <Expander Header="Student Login" HorizontalAlignment="Left" Margin="119,146,0,0" VerticalAlignment="Top" Width="538" Height="179" Foreground="Black" Background="#FFE0AD24" FontWeight="Bold" Collapsed="Expander_Collapsed_1" Expanded="Expander_Expanded_1">
+                            <Expander.Effect>
+                                <DropShadowEffect BlurRadius="10"/>
+                            </Expander.Effect>
+                            <Grid Margin="0,0,-2,0" Height="155">
+                                <Grid.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="Black" Offset="0"/>
+                                        <GradientStop Color="#FF997272" Offset="1"/>
+                                        <GradientStop Color="#FF6D5151" Offset="0.399"/>
+                                    </LinearGradientBrush>
+                                </Grid.Background>
+                                <PasswordBox TabIndex="2" x:Name="passSurname" Margin="161,22,60,104" Background="White"/>
+                                <Label Content="Surname:" FontSize="16" Foreground="White" HorizontalAlignment="Left" Height="38" Margin="62,20,0,0" VerticalAlignment="Top" Width="79" FontFamily="Segoe UI Symbol">
+                                    <Label.Effect>
+                                        <DropShadowEffect/>
+                                    </Label.Effect>
+                                </Label>
+                                <Label Content="Exam ID:" FontSize="16" Foreground="White" HorizontalAlignment="Left" Height="38" Margin="67,74,0,0" VerticalAlignment="Top" Width="79" FontFamily="Segoe UI Symbol">
+                                    <Label.Effect>
+                                        <DropShadowEffect/>
+                                    </Label.Effect>
+                                </Label>
+                                <PasswordBox TabIndex="3" x:Name="passExamID" Margin="161,75,60,51" Background="White"/>
+                                <Button TabIndex="4" x:Name="btnAccessStudent" Margin="482,113,6,0" VerticalAlignment="Top" Height="33" FontWeight="Bold" BorderBrush="#FFB99E9E" FontSize="14" Click="btnAccessStudent_Click">
+                                    <Button.Background>
+                                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                            <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                            <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                            <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                            <GradientStop Color="#FF8F1B1B" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Button.Background>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="Resources/Graphicloads-100-Flat-2-Arrow-next-1.ico"/>
+                                    </StackPanel>
+                                </Button>
+                            </Grid>
+                        </Expander>
+
+
+                    </Grid>
+                    <PasswordBox TabIndex="0" x:Name="passManagement" HorizontalAlignment="Left" Margin="601,218,0,0" VerticalAlignment="Top" Height="33" Width="317" PreviewKeyDown="passManagement_PreviewKeyDown"/>
+                    <Canvas ClipToBounds =" True" x:Name="canMain" Margin="-10,710,0,10">
+                        <Canvas.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="1"/>
+                                <GradientStop Color="#FFF0ECEC" Offset="0.702"/>
+                            </LinearGradientBrush>
+                        </Canvas.Background>
+                        <TextBlock x:Name="tbmarquee" FontSize="24" FontWeight="Bold" Text="VARSITY GATE RESOURCE CENTRE, 17 SAMMI ADENIRAN STREET, ONDO BYPASS AKURE 08167675441 08062692500" Canvas.Left="6" Canvas.Top="-2" FontFamily="GungsuhChe">
+   
+                            <TextBlock.Foreground>
+                                <SolidColorBrush x:Name="SolidColorBrush" Color="SteelBlue"/>
+                            </TextBlock.Foreground>
+                            <TextBlock.Triggers>
+                                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName = "SolidColorBrush"
+                                Storyboard.TargetProperty ="Color"
+                                From ="SteelBlue" To="Red" Duration="0:0:2"
+                                            AutoReverse="True" RepeatBehavior="Forever"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </TextBlock.Triggers>
+                        </TextBlock>
+                    </Canvas>
+                    <Label x:Name="RootText_Copy" Content="Learn Today Lead Tomorrow" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                		Height="44" Width="352" FontSize="20" FontWeight="Bold" FontFamily="Rockwell Extra Bold" RenderTransformOrigin="0.5,0.5" Margin="1011,529,0,0">
+                        <Label.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="0.193"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Label.RenderTransform>
+                        <Label.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0"/>
+                                <GradientStop Color="#FFD42A19" Offset="0.519"/>
+                            </LinearGradientBrush>
+                        </Label.Foreground>
+                        <Label.Effect>
+                            <DropShadowEffect/>
+                        </Label.Effect>
+                    </Label>
+                    <Label Content="Management:" FontSize="16" Foreground="White" HorizontalAlignment="Left" Height="45" Margin="479,218,0,0" VerticalAlignment="Top" Width="118" FontFamily="Segoe UI Symbol">
+                        <Label.Effect>
+                            <DropShadowEffect/>
+                        </Label.Effect>
+                    </Label>
+                    <Button TabIndex="1" x:Name="btnAccess" HorizontalAlignment="Left" Margin="927,218,0,0" VerticalAlignment="Top" Width="50" Height="33" FontWeight="Bold" BorderBrush="#FFB99E9E" FontSize="14" Click="btnAccess_Click">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FFB23636" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="Resources/Graphicloads-100-Flat-2-Arrow-next-1.ico"/>
+                        </StackPanel>
+                    </Button>
+                    <Calendar HorizontalAlignment="Left" Margin="790,483,0,0" VerticalAlignment="Top" Height="170" FontWeight="Bold" BorderThickness="4">
+                        <Calendar.Effect>
+                            <DropShadowEffect/>
+                        </Calendar.Effect>
+                        <Calendar.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                                <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                                <GradientStop Color="#FF718597" Offset="0.375"/>
+                                <GradientStop Color="#FFD41B12" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Calendar.BorderBrush>
+                        <Calendar.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFE4EAF0" Offset="0"/>
+                                <GradientStop Color="#FFECF0F4" Offset="0.16"/>
+                                <GradientStop Color="#FFFCFCFD" Offset="0.16"/>
+                                <GradientStop Color="#FFC93821" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Calendar.Background>
+                    </Calendar>
+                    <Expander Header="Change Management Password" HorizontalAlignment="Left" Margin="323,477,0,0" VerticalAlignment="Top" Width="241" FontSize="14" FontWeight="Bold" Foreground="White" Background="#FF0F0202">
+                        <Expander.Effect>
+                            <DropShadowEffect/>
+                        </Expander.Effect>
+                        <Grid Height="180" Margin="0,0,-415,0">
+                            <Grid.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="Black" Offset="0"/>
+                                    <GradientStop Color="#FFEABDBD" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Grid.Background>
+                            <Grid.Effect>
+                                <DropShadowEffect BlurRadius="20" ShadowDepth="6"/>
+                            </Grid.Effect>
+                            <Label Content="Old Management Password:" FontSize="16" Foreground="White" FontWeight="Bold" HorizontalAlignment="Left" Height="45" Margin="58,26,0,0" VerticalAlignment="Top" Width="216" FontFamily="Segoe UI Symbol">
+                                <Label.Effect>
+                                    <DropShadowEffect/>
+                                </Label.Effect>
+                            </Label>
+                            <Label Content="New Management Password:" FontSize="16" Foreground="White" FontWeight="Bold" HorizontalAlignment="Left" Height="38" Margin="50,70,0,0" VerticalAlignment="Top" Width="225" FontFamily="Segoe UI Symbol">
+                                <Label.Effect>
+                                    <DropShadowEffect/>
+                                </Label.Effect>
+                            </Label>
+                            <PasswordBox TabIndex="5" x:Name="passOldManagement" HorizontalAlignment="Left" Margin="288,26,0,0" VerticalAlignment="Top" Height="33" Width="312"/>
+                            <PasswordBox TabIndex="6" x:Name="passNewManagement" HorizontalAlignment="Left" Margin="288,72,0,0" VerticalAlignment="Top" Height="33" Width="312"/>
+                            <Button TabIndex="7" x:Name="btnApplyChanges" Content="APPLY CHANGES" HorizontalAlignment="Left" Margin="288,117,0,0" VerticalAlignment="Top" Width="312" Height="34" FontWeight="Bold" BorderBrush="#FFB99E9E" FontSize="14" Click="btnApplyChanges_Click">
+                                <Button.Background>
+                                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                        <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                        <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                        <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                        <GradientStop Color="#FFDA2424" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Button.Background>
+                            </Button>
+                            <Label x:Name="lblPassChanged" Content="Password Changed" FontSize="20px" Foreground="#FF080808" FontWeight="Bold" HorizontalAlignment="Left" Height="37" Margin="10,114,0,0" VerticalAlignment="Top" Width="266" FontFamily="Segoe UI Symbol" Opacity="0">
+                                <Label.Effect>
+                                    <DropShadowEffect/>
+                                </Label.Effect>
+                            </Label>
+                        </Grid>
+                    </Expander>
+
+                    <Label Content="®" HorizontalAlignment="Left" Margin="980,-171,0,0" VerticalAlignment="Top" Width="54" Foreground="#FFFBF5F5" FontWeight="Bold" FontSize="48" FontFamily="Times New Roman" Height="76">
+                        <Label.Effect>
+                            <DropShadowEffect/>
+                        </Label.Effect>
+                    </Label>
+                    <Label x:Name="lblTimer" FontFamily="Times New Roman" FontWeight="Bold" FontSize="25px" Content="." HorizontalAlignment="Left" Margin="1197,49,0,0" VerticalAlignment="Top" Width="154"/>
+                    <Image Margin="10,132,1075,87" Source="25.jpg" Stretch="Fill" Opacity="1">
+                        <Image.Style>
+                            <Style>
+                                <Style.Triggers>
+                                    <EventTrigger RoutedEvent="Image.Loaded">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetProperty="(Image.Opacity)" 
+                                                                 BeginTime="0:0:0" Duration="0:0:.5"
+                                                                 From="1.0" To="0" RepeatBehavior="Forever"
+                                                                 AutoReverse="True"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                        
+                    </Image>
+                    <Label x:Name="lblProgram" Content="Program Co-ordinator" HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Width="200" FontFamily="Times New Roman" FontSize="20" Foreground="#FFEE190E" FontWeight="Bold" FontStyle="Italic" Background="White" Margin="1097,604,0,0"/>
+                    <Image Source="dialog-cancel-2.png" Stretch="Fill" Width="56" RenderTransformOrigin="-0.018,2.383" Margin="1295,64,31,659" ToolTip="Close Application" PreviewMouseLeftButtonDown="Image_PreviewMouseLeftButtonDown_1">
+                        <Image.Effect>
+                            <DropShadowEffect/>
+                        </Image.Effect>
+                    </Image>
+                    <Image x:Name="ErrorImage" Margin="1040,132,235,507" Source="4.jpg" Stretch="Fill" Opacity="0"/>
+                    <ProgressBar x:Name="progressBar" HorizontalAlignment="Left" Height="11" Margin="0,100,0,0" VerticalAlignment="Top" Width="1174" Foreground="Red" Opacity="0" BorderThickness="0"/>
+                    <Label Content="E-mail:versity_gate@yahoo.com" Foreground="Black" FontSize="20" HorizontalAlignment="Left" Margin="1068,503,0,0" VerticalAlignment="Top" Width="253" FontFamily="Tw Cen MT Condensed Extra Bold" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+                        <Label.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-0.308"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Label.RenderTransform>
+                    </Label>
+                    <Label x:Name="lblOlufisayo" Content="Olufisayo Bankole" HorizontalAlignment="Left" Height="51" Margin="1072,560,0,0" VerticalAlignment="Top" Width="250" FontFamily="Vivaldi" FontSize="30" Foreground="#FF080A38" FontWeight="Bold" FontStyle="Italic" Background="White"/>
+                    <Canvas HorizontalAlignment="Left" Height="461" Margin="1179,49,0,0" VerticalAlignment="Top" Width="8" Background="#FF143006">
+                        <Canvas.Effect>
+                            <DropShadowEffect/>
+                        </Canvas.Effect>
+                    </Canvas>
+                    <Viewbox Margin="1130,329,127,270" Stretch="Fill">
+                        <Grid Height="171" Width="125">
+                            <Ellipse Fill="#FFD1D1E0" HorizontalAlignment="Left" Height="162" Margin="0,9,0,0" Stroke="#FFF0930D" VerticalAlignment="Top" Width="125" StrokeThickness="4">
+                                <Ellipse.Effect>
+                                    <DropShadowEffect/>
+                                </Ellipse.Effect>
+                            </Ellipse>
+                            <Label Content="V" FontSize="90" FontWeight="Bold" HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Top" Height="109" Foreground="White">
+                                <Label.Effect>
+                                    <DropShadowEffect/>
+                                </Label.Effect>
+                            </Label>
+                            <Label x:Name="GBlock" Content="G" FontSize="90" FontWeight="Bold" HorizontalAlignment="Left" Margin="32,51,0,0" VerticalAlignment="Top" Height="109" Foreground="#FFF50D0D">
+                                <Label.Effect>
+                                    <DropShadowEffect/>
+                                </Label.Effect>
+                            </Label>
+                        </Grid>
+                    </Viewbox>
+                    <Canvas HorizontalAlignment="Left" Height="70" Margin="1197,640,0,0" VerticalAlignment="Top" Width="8" Background="#FF143006" RenderTransformOrigin="0.5,0.5">
+                        <Canvas.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleY="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Canvas.RenderTransform>
+                        <Canvas.Effect>
+                            <DropShadowEffect/>
+                        </Canvas.Effect>
+                    </Canvas>
+                    <Canvas HorizontalAlignment="Left" Height="70" Margin="1179,640,0,0" VerticalAlignment="Top" Width="8" Background="#FF143006" RenderTransformOrigin="0.5,0.5">
+                        <Canvas.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleY="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Canvas.RenderTransform>
+                        <Canvas.Effect>
+                            <DropShadowEffect/>
+                        </Canvas.Effect>
+                    </Canvas>
+
+
+
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="Number2" Header="TabItem" Margin="-2,-2,-2,26" Background="#FFE22828">
+                
+                <Grid Margin="8,52,940,46">
+                    <Grid.Effect>
+                        <DropShadowEffect BlurRadius="10"/>
+                    </Grid.Effect>
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="#FF9E8E8E" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                    <Label Content="" x:Name="lblprocessing" Margin="848,17,-643,528" RenderTransformOrigin="0.5,0.5" Background="White" Foreground="Red" FontWeight="Bold" FontSize="22">
+                        <Label.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="-1" ScaleY="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-179.648"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Label.RenderTransform>
+                    </Label>
+                    <Canvas Margin="0,0,0,468" HorizontalAlignment="Left" Width="93" Background="White"/>
+                    <Ellipse Margin="1302,-74,-758,632" Fill="#FFFDF9F9"/>
+                    <Ellipse Margin="1275,-64,-731,623" Fill="#FFFBF7F7"/>
+                    <Canvas Margin="40,-86,0,468" HorizontalAlignment="Left" Width="20" Background="#FF2D510E"/>
+                    <RadioButton x:Name="RadioSignal" Margin="1050,8,-496,565" Background="#FFEC1010" BorderBrush="#FF8F8E8E" Foreground="#FFE40E0E"/>
+                    <TextBox HorizontalAlignment="Left" FontWeight="Bold" FontSize="20" Height="34" Margin="651,16,-423,0" TextWrapping="Wrap" Text="Database Visualizer" VerticalAlignment="Top" Width="195" FontFamily="Papyrus"/>
+                    <Image Source="55.jpg" Stretch="Fill" Margin="572,348,-506,18" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                    <Grid Margin="149,202,149,211">
+                        <Ellipse Fill="#FFD1D1E0" HorizontalAlignment="Left" Margin="-132,-191,0,281" Stroke="#FFF0930D" Width="67" StrokeThickness="4">
+                            <Ellipse.Effect>
+                                <DropShadowEffect/>
+                            </Ellipse.Effect>
+                        </Ellipse>
+                        <Label Content="V" FontSize="40" FontWeight="Bold" HorizontalAlignment="Left" Margin="-122,-195,0,0" VerticalAlignment="Top" Height="59" Foreground="White" Width="42">
+                            <Label.Effect>
+                                <DropShadowEffect/>
+                            </Label.Effect>
+                        </Label>
+                        <Label x:Name="GBlock1" Content="G" FontSize="40" FontWeight="Bold" HorizontalAlignment="Left" Margin="-118,-170,0,0" VerticalAlignment="Top" Height="60" Foreground="#FFF50D0D" Width="42">
+                            <Label.Effect>
+                                <DropShadowEffect/>
+                            </Label.Effect>
+                        </Label>
+                    </Grid>
+
+                    <DataGrid x:Name="tableDataGrid" GridLinesVisibility="None" 
+                		RowBackground="Bisque"  AlternatingRowBackground="LightBlue" IsReadOnly="True" 
+                		AutoGenerateColumns="False" BorderThickness="4" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="426,51,-648,317" RowDetailsVisibilityMode="VisibleWhenSelected" FontWeight="Bold" FontSize="14">
+                        <DataGrid.Effect>
+                            <DropShadowEffect BlurRadius="20" ShadowDepth="10"/>
+                        </DataGrid.Effect>
+                        <DataGrid.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0"/>
+                                <GradientStop Color="#FFA21313" Offset="1"/>
+                            </LinearGradientBrush>
+                        </DataGrid.BorderBrush>
+                        <DataGrid.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0"/>
+                                <GradientStop Color="#FF813A3A" Offset="0.514"/>
+                            </LinearGradientBrush>
+                        </DataGrid.Background>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="studentIdColumn" Binding="{Binding StudentId}" Header="Student Id" Width="80"/>
+                            <DataGridTextColumn x:Name="nameColumn" Binding="{Binding Name}" Header="Name" Width="100"/>
+                            <DataGridTextColumn x:Name="surnameColumn" Binding="{Binding Surname}" Header="Surname" Width="100"/>
+                            <DataGridTextColumn x:Name="examIDColumn" Binding="{Binding ExamID}" Header="Exam ID" Width="100"/>
+                            <DataGridTextColumn x:Name="examTypeColumn" Binding="{Binding ExamType}" Header="Exam Type" Width="100"/>
+                            <DataGridTemplateColumn x:Name="passportColumn" Header="Passport" Width="200">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Image Source="{Binding Passport}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="btnGlobalSettings" Margin="799,272,-544,274" RenderTransformOrigin="0.5,0.5" Click="btnGlobalSettings_Click">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FFB91717" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="applications-internet-3.png" Stretch="Fill" Height="30" Width="34" RenderTransformOrigin="0.305,0.509"/>
+                            <Label Content="Global Settings" Width="96" Height="27" FontWeight="Bold"></Label>
+                        </StackPanel>
+                    </Button>
+                    <Label Margin="427,17,-228,534" RenderTransformOrigin="0.5,0.5" Background="#FFFFFFFB">
+                        <Label.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Label.RenderTransform>
+                    </Label>
+                    <StackPanel x:Name="stpBiography" Margin="1071,0,-906,94">
+                        <StackPanel.Effect>
+                            <DropShadowEffect/>
+                        </StackPanel.Effect>
+                        <StackPanel.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0"/>
+                                <GradientStop Color="#FF998D8D" Offset="1"/>
+                            </LinearGradientBrush>
+                        </StackPanel.Background>
+                        <Image x:Name="AdminImage" Height="141" Margin="57,40,59,0"/>
+                        <Label x:Name="lblAdminName" Height="36" FontSize="16" FontWeight="Bold" FontFamily="Times New Roman" Margin="95,0,74,0" Foreground="#FFFDFCFC"/>
+                        <Label x:Name="lblAdminSurname" Height="33" FontSize="16" FontWeight="Bold" FontFamily="Times New Roman" Margin="95,0,74,0" Foreground="#FFFDFCFC"/>
+                        <Label x:Name="lblAdminExamID" Height="35" FontSize="16" FontWeight="Bold" FontFamily="Times New Roman" Margin="95,0,74,0" Foreground="#FFFDFCFC"/>
+                        <Label x:Name="lblAdminExamType" Height="30" FontSize="16" FontWeight="Bold" FontFamily="Times New Roman" Margin="95,0,74,0" Foreground="#FFFDFCFC"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox x:Name="txtAdminSearch" Height="34" Background="#FF5F5C5C" Foreground="#FFF9F6F6" Width="158" ToolTip="Search using Name, and Surname" TextChanged="txtAdminSearch_TextChanged"/>
+                            <Button x:Name="SearchButton" Content="Search" FontWeight="Black" FontSize="14" Width="100" Click="SearchButton_Click">
+                                <Button.Background>
+                                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                        <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                        <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                        <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                        <GradientStop Color="#FFC74D4D" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Button.Background>
+                            </Button>
+                        </StackPanel>
+                        <ListView x:Name="ltbAdminSearch" Height="141" BorderBrush="#FFF8F9FB" FontWeight="Bold" FontFamily="Times New Roman" FontSize="16" Background="#FFF3E9E9" SelectionChanged="ltbAdminSearch_SelectionChanged"/>
+                        
+                    </StackPanel>
+                    <Label Content="Register Student" HorizontalAlignment="Left" Height="51" Margin="107,0,0,0" VerticalAlignment="Top" Width="259" FontFamily="Times New Roman" FontSize="36" Foreground="#FFF5F3F3" FontWeight="Bold" FontStyle="Italic">
+                        <Label.Effect>
+                            <DropShadowEffect/>
+                        </Label.Effect>
+                    </Label>
+                    <Label Content="Name:" FontSize="18" Foreground="White" HorizontalAlignment="Left" Height="45" Margin="60,116,0,0" VerticalAlignment="Top" Width="76" FontFamily="Segoe UI Symbol">
+                        <Label.Effect>
+                            <DropShadowEffect/>
+                        </Label.Effect>
+                    </Label>
+                    <Label Content="Surname:" FontSize="18" Foreground="White" HorizontalAlignment="Left" Height="45" Margin="35,166,0,0" VerticalAlignment="Top" Width="101" FontFamily="Segoe UI Symbol">
+                        <Label.Effect>
+                            <DropShadowEffect/>
+                        </Label.Effect>
+                    </Label>
+                    <Label Content="Exam ID:" FontSize="18" Foreground="White" HorizontalAlignment="Left" Height="45" Margin="41,216,0,0" VerticalAlignment="Top" Width="95" FontFamily="Segoe UI Symbol">
+                        <Label.Effect>
+                            <DropShadowEffect/>
+                        </Label.Effect>
+                    </Label>
+                    <Label Content="Exam Type:" FontSize="18" Foreground="White" HorizontalAlignment="Left" Height="45" Margin="19,265,0,0" VerticalAlignment="Top" Width="117" FontFamily="Segoe UI Symbol">
+                        <Label.Effect>
+                            <DropShadowEffect/>
+                        </Label.Effect>
+                    </Label>
+                    <TextBox TabIndex="0" x:Name="txtName" Margin="149,121,49,432" FontSize="16"/>
+                    <ComboBox TabIndex="3" x:Name="comboExamType" Margin="150,270,48,283" SelectionChanged="comboExamType_SelectionChanged">
+                        <ComboBox.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FFE01515" Offset="1"/>
+                            </LinearGradientBrush>
+                        </ComboBox.Background>
+                    </ComboBox>
+                    <ComboBox TabIndex="7" x:Name="comboExamID" Margin="150,485,48,68">
+                        <ComboBox.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+                        </ComboBox.Background>
+                    </ComboBox>
+                    <Grid Margin="57,328,207,114" Background="#FFFBF9F9">
+                        <Image x:Name="Photo" Margin="10"/>
+                    </Grid>
+                    <Button TabIndex="5" x:Name="btnSubmitStudentInfo" Content="Submit" HorizontalAlignment="Left" Margin="265,373,0,0" VerticalAlignment="Top" Width="109" Height="31" FontWeight="Bold" BorderBrush="#FFB99E9E" FontSize="14" Click="btnSubmitStudentInfo_Click">
+                        <Button.Effect>
+                            <DropShadowEffect BlurRadius="10" ShadowDepth="10"/>
+                        </Button.Effect>
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FFDA2424" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button TabIndex="4" x:Name="btnChooseImage" Content="Choose image" HorizontalAlignment="Left" Margin="265,328,0,0" VerticalAlignment="Top" Width="110" Height="31" BorderBrush="#FFB99E9E" FontSize="14" FontWeight="Bold" Click="btnChooseImage_Click">
+                        <Button.Effect>
+                            <DropShadowEffect BlurRadius="10" ShadowDepth="10"/>
+                        </Button.Effect>
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FFDA2424" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <TextBox TabIndex="1" x:Name="txtSurname" Margin="150,171,48,382" FontSize="16"/>
+                    <TextBox TabIndex="2" x:Name="txtExamID" Margin="150,220,48,333" FontSize="16"/>
+                    <TextBox x:Name="statusBar" Margin="-14,605,-950,-52" Text="MrWiz-TestEngine" Foreground="#FFF9F6F6" FontWeight="Bold" FontSize="14">
+                        <TextBox.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0"/>
+                                <GradientStop Color="#FFBDACAC" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBox.Background>
+                    </TextBox>
+                    <Button TabIndex="6" x:Name="btnEmpyDataBase" Content="Empty database" HorizontalAlignment="Left" Margin="970,272,-648,0" VerticalAlignment="Top" Width="101" Height="38" FontWeight="Bold" Click="btnEmpyDataBase_Click">
+                        <Button.Effect>
+                            <DropShadowEffect/>
+                        </Button.Effect>
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FFCF2C2C" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button FontWeight="Bold" Content="Search info" x:Name="btnCheckBiography" Margin="1103,490,-780,68">
+                        <Button.Effect>
+                            <DropShadowEffect BlurRadius="20" ShadowDepth="10"/>
+                        </Button.Effect>
+                    </Button>
+                    <Button TabIndex="8" HorizontalAlignment="Left" Margin="265,528,0,0" VerticalAlignment="Top" Width="109" Height="31">
+                        <Button.Effect>
+                            <DropShadowEffect BlurRadius="10" ShadowDepth="10"/>
+                        </Button.Effect>
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FFCF2C2C" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content=" Delete info." FontWeight="Bold"/>
+                        </StackPanel>
+                    </Button>
+                    <Ellipse Margin="1297,-45,-753,603" Fill="#FFF7F3F3"/>
+                    <Image Stretch="Fill" Source="American_Neighborhood_house_26_SW_view.jpg02b38a96-ce0e-460b-82c2-79592c11707aLarger.jpg" Margin="1220,518,-881,-6" PreviewMouseLeftButtonUp="Image_PreviewMouseLeftButtonUp_1"/>
+                    <Button IsEnabled="False" x:Name="btnGotoHome" Content="Home" HorizontalAlignment="Left" Margin="1218,0,-879,67" VerticalAlignment="Bottom" Width="84" Height="27" FontWeight="Bold" BorderBrush="#FFB99E9E" FontSize="14">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FFDA2424" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Label x:Name="secondTabText" Content="MrWiz-TestEngine" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                		Height="44" Width="341" FontSize="30" FontWeight="Bold" FontFamily="Rockwell Extra Bold" Margin="929,595,-847,-55">
+                        <Label.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0"/>
+                                <GradientStop Color="#FFD42A19" Offset="0.519"/>
+                            </LinearGradientBrush>
+                        </Label.Foreground>
+                        <Label.Effect>
+                            <DropShadowEffect/>
+                        </Label.Effect>
+                        <Label.Triggers>
+                            <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="secondTabText" 
+                							Storyboard.TargetProperty="Width"
+                							From="0.0" To="455" Duration="0:0:2"
+                							AutoReverse="True" RepeatBehavior="Forever"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="secondTabText" 
+                							Storyboard.TargetProperty="Height"
+                							From="0.0" To="60" Duration="0:0:2"
+                							AutoReverse="True" RepeatBehavior="Forever"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Label.Triggers>
+                    </Label>
+                    <Image Margin="708,-53,-357,567" Source="myico.ico" Stretch="Fill"/>
+                    <Image Source="mail-find.png" Stretch="Fill" Margin="1131,521,-775,-6"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="Number3" Header="ThirdItem" Margin="-5,-2,1,26">
+                <Grid>
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="#FFEDFF35" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                    <WebBrowser Name="pdfdisplay" Margin="22,10,523,31" OpacityMask="Black">
+                        <WebBrowser.Effect>
+                            <DropShadowEffect BlurRadius="10" ShadowDepth="10"/>
+                        </WebBrowser.Effect>
+                    </WebBrowser>
+                    <Image Margin="862,10,10,590" Source="header.jpg" Stretch="Fill">
+                        <Image.Effect>
+                            <DropShadowEffect BlurRadius="10" ShadowDepth="10"/>
+                        </Image.Effect>
+                        <Image.Style>
+                            <Style>
+                                <Style.Triggers>
+                                    <EventTrigger RoutedEvent="Image.Loaded">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetProperty="(Image.Opacity)" 
+                                                                 BeginTime="0:0:0" Duration="0:0:3"
+                                                                 From="1.0" To="0" RepeatBehavior="Forever"
+                                                                 AutoReverse="True"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                    </Image>
+                    <ListBox  Name="lstObjectives" HorizontalAlignment="Left" Height="137" Margin="862,127,0,0" VerticalAlignment="Top" Width="246" SelectionChanged="lstObjectives_SelectionChanged" Foreground="White" FontSize="16" FontFamily="SimSun">
+                        <ListBox.Effect>
+                            <DropShadowEffect BlurRadius="10" ShadowDepth="10"/>
+                        </ListBox.Effect>
+                        <ListBox.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0"/>
+                                <GradientStop Color="#FF28A222" Offset="1"/>
+                            </LinearGradientBrush>
+                        </ListBox.Background>
+                    </ListBox>
+                    <Label Content="            UTME SUBJECT OBJECTIVES" HorizontalAlignment="Left" Margin="862,97,0,0" VerticalAlignment="Top" Width="246" Foreground="White" FontWeight="Bold">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0"/>
+                                <GradientStop Color="#FFFD0F0F" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <ListBox  x:Name="lstFaculties" HorizontalAlignment="Left" Height="137" Margin="1115,127,0,0" VerticalAlignment="Top" Width="246" Foreground="White" FontSize="16" SelectionChanged="lstFaculties_SelectionChanged" FontFamily="SimSun">
+                        <ListBox.Effect>
+                            <DropShadowEffect BlurRadius="10" ShadowDepth="10"/>
+                        </ListBox.Effect>
+                        <ListBox.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0"/>
+                                <GradientStop Color="#FF32A220" Offset="1"/>
+                            </LinearGradientBrush>
+                        </ListBox.Background>
+                    </ListBox>
+                    <Label Content="                        FACULTIES" HorizontalAlignment="Left" Margin="1115,97,0,0" VerticalAlignment="Top" Width="246" Foreground="White" FontWeight="Bold">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0"/>
+                                <GradientStop Color="#FFF52B2B" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                </Grid>
+
+            </TabItem>
+            <TabItem Margin="-9,-4,-21,26" RenderTransformOrigin="0.5,0.5">
+                <TabItem.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TabItem.RenderTransform>
+                <Grid Margin="0,-13,0,0">
+                    <TextBox x:Name="lblDisplayQuestion" FontSize="20"  IsReadOnly="True" FontFamily="Times New Roman" HorizontalAlignment="Left" Height="298" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="816" Background="White"/>
+                    <Image HorizontalAlignment="Left" Height="241" Margin="80,325,0,0" VerticalAlignment="Top" Width="330" OpacityMask="#FFAE8484"/>
+                    <Viewbox Margin="890,11,422,423" Stretch="Fill">
+                        <Grid Height="261" Width="59"/>
+                    </Viewbox>
+                    <Button x:Name="btnPrevious" Content="Previous" FontSize="15px" FontWeight="Bold" Margin="398,0,834,12" Height="36" VerticalAlignment="Bottom">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FFCB4949" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="btnNext" Content="Next" FontSize="15px" FontWeight="Bold" Margin="542,0,690,12" Height="36" VerticalAlignment="Bottom">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FFCB4949" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Viewbox Margin="926,17,39,432" Stretch="Fill">
+                        <Grid Height="246" Width="416">
+                            <TextBox TextWrapping="Wrap" IsReadOnly="True" x:Name="lblOptionA" Text="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="416" Height="57" FontFamily="Times New Roman" Margin="0,10,0,0"/>
+                            <TextBox TextWrapping="Wrap" IsReadOnly="True" x:Name="lblOptionB" Text="" HorizontalAlignment="Left" Margin="0,76,0,0" VerticalAlignment="Top" Width="416" Height="57" FontFamily="Times New Roman"/>
+                            <TextBox TextWrapping="Wrap" IsReadOnly="True" x:Name="lblOptionC" Text="" HorizontalAlignment="Left" Margin="0,153,0,0" VerticalAlignment="Top" Width="416" Height="57" FontFamily="Times New Roman"/>
+                            <TextBox TextWrapping="Wrap" IsReadOnly="True" x:Name="lblOptionD" Text="" HorizontalAlignment="Left" Margin="0,224,0,-35" VerticalAlignment="Top" Width="416" Height="57" FontFamily="Times New Roman"/>
+                            <TextBox x:Name="lblOptionA_Copy" Text="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="7" Height="546" FontFamily="Times New Roman" Margin="-83,-8,0,-292" Background="#FF493F3F"/>
+                        </Grid>
+                    </Viewbox>
+                    <Button x:Name="btnStartTest" Content="Start" FontSize="15px" FontWeight="Bold" Margin="254,0,978,12" Height="36" VerticalAlignment="Bottom" Click="btnStartTest_Click">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FFCB4949" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Label Margin="1099,358,164,302" Content="Logged in:" Foreground="White" FontSize="16" FontWeight="Bold">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0"/>
+                                <GradientStop Color="Red" Offset="0.5"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <TabControl x:Name="tbControlOptions" Margin="863,-177,456,404" BorderBrush="White" Opacity="0">           
+                        <TabItem>
+                            <StackPanel Background="White">
+                                <RadioButton  x:Name="A1" Content="a" Height="79" FontWeight="Bold" FontSize="20" Margin="1,0,-1,0" Background="White" BorderBrush="White"></RadioButton>
+                                <RadioButton x:Name="B1" Content="b" Height="73" FontSize="20" FontWeight="Bold" BorderBrush="White"></RadioButton>
+                                <RadioButton x:Name="C1" Content="c" Height="67" FontSize="20" FontWeight="Bold" BorderBrush="White"></RadioButton>
+                                <RadioButton x:Name="D1" Content="d" FontSize="20" Height="36" FontWeight="Bold" BorderBrush="White"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton x:Name="A2" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B2" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C2" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D2" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton x:Name="A3" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B3" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C3" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D3" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton x:Name="A4" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B4" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C4" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D4" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton x:Name="A5" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B5" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C5" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D5" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton x:Name="A6" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B6" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C6" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D6" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A7" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B7" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C7" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D7" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A8" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B8" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C8" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D8" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A9" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B9" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C9" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D9" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton x:Name="A10" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B10" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C10" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D10" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A11" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B11" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C11" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D11" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A12" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B12" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C12" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D12" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A13" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B13" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C13" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D13" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A14" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B14" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C14" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D14" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A15" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B15" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C15" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D15" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A16" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B16" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C16" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D16" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A17" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B17" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C17" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D17" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A18" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B18" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C18" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D18" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A19" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B19" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C19" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D19" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A20" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B20" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C20" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D20" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A21" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B21" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C21" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D21" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A22" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B22" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C22" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D22" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A23" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B23" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C23" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D23" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A24" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B24" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C24" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D24" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A25" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B25" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C25" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D25" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A26" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B26" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C26" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D26" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A27" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B27" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C27" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D27" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A28" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B28" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C28" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D28" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A29" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B29" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C29" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D29" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A30" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B30" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C30" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D30" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A31" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B31" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C31" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D31" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A32" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B32" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C32" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D32" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A33" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B33" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C33" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D33" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A34" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B34" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C34" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D34" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A35" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B35" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C35" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D35" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A36" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B36" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C36" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D36" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A37" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B37" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C37" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D37" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A38" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B38" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C38" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D38" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A39" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B39" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C39" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D39" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A40" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B40" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C40" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D40" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A41" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B41" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C41" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D41" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A42" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B42" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C42" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D42" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A43" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B43" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C43" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D43" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A44" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B44" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C44" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D44" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A45" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B45" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C45" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D45" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A46" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B46" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C46" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D46" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A47" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B47" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C47" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D47" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A48" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B48" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C48" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D48" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A49" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B49" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C49" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D49" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A50" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B50" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C50" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D50" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A51" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B51" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C51" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D51" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A52" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B52" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C52" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D52" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A53" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B53" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C53" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D53" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A54" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B54" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C54" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D54" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A55" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B55" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C55" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D56" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A57" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B57" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C57" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D57" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A58" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B58" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C58" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D58" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A59" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B59" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C59" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D59" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A60" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B60" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C60" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D60" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A61" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B61" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C61" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D61" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A62" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B62" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C62" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D62" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A63" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B63" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C63" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D63" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A64" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B64" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C64" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D64" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A65" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B65" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C65" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D65" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A66" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B66" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C66" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D66" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A67" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B67" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C67" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D67" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A68" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B68" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C68" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D68" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A69" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B69" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C69" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D69" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A70" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B70" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C70" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D70" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A71" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B71" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C71" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D71" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A72" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B72" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C72" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D72" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A73" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B73" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C73" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D73" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A74" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B74" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C74" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D74" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A75" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B75" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C75" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D75" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A76" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B76" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C76" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D76" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A77" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B77" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C77" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D77" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A78" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B78" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C78" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D78" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A79" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B79" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C79" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D79" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A80" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B80" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C80" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D80" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A81" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B81" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C81" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D81" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A82" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B82" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C82" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D82" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A83" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B83" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C83" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D83" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A84" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B84" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C84" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D84" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A85" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B85" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C85" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D85" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A86" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B86" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C86" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D86" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A87" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B87" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C87" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D87" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A88" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B88" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C88" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D88" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A89" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B89" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C89" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D89" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A90" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B90" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C90" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D90" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A91" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B91" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C91" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D91" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A92" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B92" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C92" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D92" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A93" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B93" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C93" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D93" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A94" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B94" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C94" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D94" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A95" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B95" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C95" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D95" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A96" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B96" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C96" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D96" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A97" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B97" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C97" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D97" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A98" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B98" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C98" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D98" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A99" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B99" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C99" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D99" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A100" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B100" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C100" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D100" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A101" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B101" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C101" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D101" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton x:Name="A102" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B102" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C102" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D102" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton x:Name="A103" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B103" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C103" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D103" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton x:Name="A104" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B104" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C104" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D104" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton x:Name="A105" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B105" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C105" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D105" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton x:Name="A106" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B106" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C106" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D106" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A107" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B107" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C107" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D107" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A108" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B108" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C108" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D108" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A109" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B109" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C109" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D109" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton x:Name="A110" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B110" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C110" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D110" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A111" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B111" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C111" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D111" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A112" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B112" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C112" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D112" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A113" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B113" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C113" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D113" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A114" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B114" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C114" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D114" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A115" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B115" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C115" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D115" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A116" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B116" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C116" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D116" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A117" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B117" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C117" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D117" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A118" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B118" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C118" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D118" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A119" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B119" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C119" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D119" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A120" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B120" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C120" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D120" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A121" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B121" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C121" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D121" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A122" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B122" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C122" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D122" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A123" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B123" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C123" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D123" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A124" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B124" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C124" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D124" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A125" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B125" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C125" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D125" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A126" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B126" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C126" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D126" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A127" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B127" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C127" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D127" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A128" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B128" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C128" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D128" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A129" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B129" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C129" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D129" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A130" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B130" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C130" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D130" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A131" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B131" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C131" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D131" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A132" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B132" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C132" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D132" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A133" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B133" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C133" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D133" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A134" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B134" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C134" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D134" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A135" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B135" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C135" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D135" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A136" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B136" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C136" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D136" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A137" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B137" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C137" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D137" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A138" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B138" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C138" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D138" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A139" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B139" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C139" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D139" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A140" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B140" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C140" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D140" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A141" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B141" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C141" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D141" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A142" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B142" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C142" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D142" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A143" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B143" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C143" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D143" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A144" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B144" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C144" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D144" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A145" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B145" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C145" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D145" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A146" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B146" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C146" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D146" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A147" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B147" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C147" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D147" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A148" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B148" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C148" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D148" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A149" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B149" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C149" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D149" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem>
+                            <StackPanel>
+                                <RadioButton  x:Name="A150" Content="a" Height="80" FontWeight="Bold" FontSize="20"></RadioButton>
+                                <RadioButton x:Name="B150" Content="b" Height="73" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="C150" Content="c" Height="75" FontSize="20" FontWeight="Bold"></RadioButton>
+                                <RadioButton x:Name="D150" Content="d" FontSize="20" Height="36" FontWeight="Bold"></RadioButton>
+                            </StackPanel>
+                        </TabItem>
+                    </TabControl>
+                    <Label Margin="862,-22,456,658" Background="White"/>
+                    <Label x:Name="lblStudentLogin" Margin="1098,393,40,267" Content="Test Engine idle" Foreground="White" FontSize="16" FontWeight="Bold">
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0"/>
+                                <GradientStop Color="Red" Offset="0.465"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                        
+                    </Label>
+                    <Image Source="go-home-5.png" Stretch="Fill" Margin="1249,603,36,12" ToolTip="Home Page"  PreviewMouseLeftButtonUp="Image_PreviewMouseLeftButtonUp_2"/>
+                    <Label Margin="1099,446,39,180" Background="#FF4B4848" Foreground="White" FontSize="16" FontWeight="Bold" PreviewMouseLeftButtonUp="Label_PreviewMouseLeftButtonUp_2">
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Navigate to extras" Foreground="White" Height="33"></Label>
+                            <Image Height="61" Source="applications-system.png" Stretch="Fill" Width="66"/>
+                        </StackPanel>
+                    </Label>
+                    <Label x:Name ="lblTiming" Margin="926,411,287,241" Content="" Foreground="Black" FontSize="24" FontWeight="Bold" Background="White"/>
+                </Grid>
+            </TabItem>
+            <TabItem Margin="-2,-2,-32,22">
+                <Grid Margin="-4,1,4,-1">
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="#FFCDB4B4" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                    <Button Margin="1188,550,39,92">
+                        <Button.Effect>
+                            <DropShadowEffect/>
+                        </Button.Effect>
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FFB23838" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="edit-redo-4.png" Stretch="Fill" Height="42" Width="49"/>
+                            <Label Content="Upload" Height="29" FontWeight="Bold" FontSize="14"></Label>
+                        </StackPanel>
+                      
+                    </Button>
+                    <Label Content="OptionC:" FontSize="16" Foreground="White" HorizontalAlignment="Left" Height="45" Margin="758,440,0,0" VerticalAlignment="Top" Width="76" FontFamily="Segoe UI Symbol"/>
+                    <Label Content="Question:" FontSize="16" Foreground="White" HorizontalAlignment="Left" Height="45" Margin="758,163,0,0" VerticalAlignment="Top" Width="82" FontFamily="Segoe UI Symbol"/>
+                    <Label Content="OptionA:" FontSize="16" Foreground="White" HorizontalAlignment="Left" Height="45" Margin="758,320,0,0" VerticalAlignment="Top" Width="77" FontFamily="Segoe UI Symbol"/>
+                    <Label Content="OptionB:" FontSize="16" Foreground="White" HorizontalAlignment="Left" Height="45" Margin="758,385,0,0" VerticalAlignment="Top" Width="77" FontFamily="Segoe UI Symbol"/>
+                    <Label Content="OptionD:" FontSize="16" Foreground="White" HorizontalAlignment="Left" Height="45" Margin="757,495,0,0" VerticalAlignment="Top" Width="78" FontFamily="Segoe UI Symbol"/>
+                    <TextBox HorizontalAlignment="Left" Height="190" Margin="845,118,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="329" Background="White" BorderThickness="3"/>
+                    <TextBox HorizontalAlignment="Left" Height="45" Margin="845,432,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="487" Background="White" BorderThickness="3"/>
+                    <TextBox HorizontalAlignment="Left" Height="45" Margin="845,377,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="487" Background="White" BorderThickness="3"/>
+                    <TextBox HorizontalAlignment="Left" Height="45" Margin="844,320,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="488" Background="White" BorderThickness="3"/>
+                    <TextBox HorizontalAlignment="Left" Height="45" Margin="845,488,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="487" Background="White" BorderThickness="3"/>
+                    <Grid HorizontalAlignment="Left" Height="145" Margin="1188,163,0,0" VerticalAlignment="Top" Width="144" Background="#FFFBF8F8"/>
+                    <ComboBox Name="cbSelectModule" FontWeight="Bold" HorizontalAlignment="Left" Margin="844,73,0,0" VerticalAlignment="Top" Width="153" Height="31">
+                        <ComboBox.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FFD33131" Offset="1"/>
+                            </LinearGradientBrush>
+                        </ComboBox.Background>
+                    </ComboBox>
+                    <ComboBox Name="cbSelectQuestionNumber" FontWeight="Bold" HorizontalAlignment="Left" Margin="1002,73,0,0" VerticalAlignment="Top" Width="165" Height="31">
+                        <ComboBox.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FFE43D3D" Offset="1"/>
+                            </LinearGradientBrush>
+                        </ComboBox.Background>
+                    </ComboBox>
+                    <Label Content="Set Exam Module:" FontSize="14" Foreground="White" HorizontalAlignment="Left" Height="31" Margin="845,42,0,0" VerticalAlignment="Top" Width="127" FontFamily="Segoe UI Symbol"/>
+                    <Label Content="Set Question Number:" FontSize="14" Foreground="White" HorizontalAlignment="Left" Height="31" Margin="1011,42,0,0" VerticalAlignment="Top" Width="147" FontFamily="Segoe UI Symbol"/>
+                    <ComboBox x:Name="cbSelectSubject" FontWeight="Bold" HorizontalAlignment="Left" Margin="1172,73,0,0" VerticalAlignment="Top" Width="160" Height="31">
+                        <ComboBox.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FFE43D3D" Offset="1"/>
+                            </LinearGradientBrush>
+                        </ComboBox.Background>
+                    </ComboBox>
+                    <Label Content="Set Subject:" FontSize="14" Foreground="White" HorizontalAlignment="Left" Height="31" Margin="1197,42,0,0" VerticalAlignment="Top" Width="89" FontFamily="Segoe UI Symbol"/>
+                    <Label Content="Answer:" FontSize="16" Foreground="White" HorizontalAlignment="Left" Height="45" Margin="763,545,0,0" VerticalAlignment="Top" Width="67" FontFamily="Segoe UI Symbol"/>
+                    <ComboBox x:Name="cbSelectAnswer" FontWeight="Bold" HorizontalAlignment="Left" Margin="844,550,0,0" VerticalAlignment="Top" Width="153" Height="40" RenderTransformOrigin="0.503,0.419">
+                        <ComboBox.Effect>
+                            <DropShadowEffect/>
+                        </ComboBox.Effect>
+                        <ComboBox.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FFD33131" Offset="1"/>
+                            </LinearGradientBrush>
+                        </ComboBox.Background>
+                    </ComboBox>
+                    <Label Content="Label" HorizontalAlignment="Left" Margin="720,0,0,0" VerticalAlignment="Top" Background="White" Foreground="White" Height="672" Width="3"/>
+                    <Label Content="Label" HorizontalAlignment="Left" Margin="1041,-285,0,0" VerticalAlignment="Top" Background="White" Foreground="White" Height="638" Width="2" RenderTransformOrigin="0.5,0.5">
+                        <Label.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Label.RenderTransform>
+                    </Label>
+                    <Label Content="UPDATE DATABASE" FontSize="14" Foreground="White" HorizontalAlignment="Left" Height="25" Margin="954,1,0,0" VerticalAlignment="Top" Width="133" FontFamily="Segoe UI Symbol" FontWeight="Bold"/>
+                    <Button HorizontalAlignment="Left" Margin="1188,118,0,0" VerticalAlignment="Top" Width="144" Height="45">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                <GradientStop Color="#FFD35A5A" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="1"/>
+                                <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="edit-find.png" Stretch="Fill" Height="38" Width="39"/>
+                            <Label FontWeight="Bold" Content="Choose Figure" Width="92" Height="28"></Label>
+                        </StackPanel>
+                       
+                    </Button>
+                    <Expander Header="Set Exam Module" HorizontalAlignment="Left" Margin="845,595,0,0" VerticalAlignment="Top" Width="163" RenderTransformOrigin="0.5,0.5" Height="77" Foreground="Black" FontSize="14" IsExpanded="True" FontWeight="Bold">
+                        <Expander.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="0"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Expander.RenderTransform>
+                        <ComboBox Name="cbGlobalModule" HorizontalAlignment="Left" Width="152" Height="35" ToolTip="This sets the module to be used for the entire examination">
+                            <ComboBox.Effect>
+                                <DropShadowEffect/>
+                            </ComboBox.Effect>
+                            <ComboBox.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                    <GradientStop Color="#FF814040" Offset="0.5"/>
+                                    <GradientStop Color="#FFDC5252" Offset="1"/>
+                                </LinearGradientBrush>
+                            </ComboBox.Background>
+                        </ComboBox>
+                    </Expander>
+                    <Image Margin="1011,613,303,10" Source="media-record-4.png" Stretch="Fill" RenderTransformOrigin="0.48,0.512">
+                        <Image.Style>
+                            <Style>
+                                <Style.Triggers>
+                                    <EventTrigger RoutedEvent="Image.Loaded">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetProperty="(Image.Opacity)" 
+                                                                 BeginTime="0:0:0" Duration="0:0:.5"
+                                                                 From="1.0" To="0" RepeatBehavior="Forever"
+                                                                 AutoReverse="True"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                    </Image>
+                    <Grid x:Name="gridResult" HorizontalAlignment="Left" Height="576" Margin="10,40,0,0" VerticalAlignment="Top" Width="696">
+                        <Grid.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="1"/>
+                                <GradientStop Color="#FF8B2E2E" Offset="0.112"/>
+                                <GradientStop Color="White" Offset="0.51"/>
+                                <GradientStop Color="White" Offset="0.421"/>
+                                <GradientStop Color="White" Offset="1"/>
+                                <GradientStop Color="#FF4D4D4D" Offset="1"/>
+                                <GradientStop Color="#FF4D4D4D" Offset="1"/>
+                                <GradientStop Color="#FF851818" Offset="0.996"/>
+                            </LinearGradientBrush>
+                        </Grid.Background>
+                        <Ellipse Fill="#FFD1D1E0" HorizontalAlignment="Left" Height="162" Margin="281,0,0,0" Stroke="#FFF0930D" VerticalAlignment="Top" Width="125" StrokeThickness="4">
+                            <Ellipse.Effect>
+                                <DropShadowEffect/>
+                            </Ellipse.Effect>
+                        </Ellipse>
+                        <Label x:Name="GBlock_Copy" Content="G" FontSize="90" FontWeight="Bold" HorizontalAlignment="Left" Margin="306,39,0,0" VerticalAlignment="Top" Height="109" Foreground="#FFF50D0D">
+                            <Label.Effect>
+                                <DropShadowEffect/>
+                            </Label.Effect>
+                        </Label>
+                        <Label Content="V" FontSize="90" FontWeight="Bold" HorizontalAlignment="Left" Margin="302,-25,0,0" VerticalAlignment="Top" Height="109" Foreground="White">
+                            <Label.Effect>
+                                <DropShadowEffect/>
+                            </Label.Effect>
+                        </Label>
+                        <Canvas HorizontalAlignment="Left" Height="14" Margin="411,60,0,0" VerticalAlignment="Top" Width="285" Background="#FF143006">
+                            <Canvas.Effect>
+                                <DropShadowEffect/>
+                            </Canvas.Effect>
+                        </Canvas>
+                        <Canvas HorizontalAlignment="Left" Height="14" Margin="0,60,0,0" VerticalAlignment="Top" Width="276" Background="#FF143006">
+                            <Canvas.Effect>
+                                <DropShadowEffect/>
+                            </Canvas.Effect>
+                        </Canvas>
+                        <Canvas HorizontalAlignment="Left" Height="13" Margin="413,86,0,0" VerticalAlignment="Top" Width="283" Background="#FF143006" RenderTransformOrigin="0.5,0.5">
+                            <Canvas.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Canvas.RenderTransform>
+                            <Canvas.Effect>
+                                <DropShadowEffect/>
+                            </Canvas.Effect>
+                        </Canvas>
+                        <Canvas HorizontalAlignment="Left" Height="13" Margin="0,84,0,0" VerticalAlignment="Top" Width="276" Background="#FF143006">
+                            <Canvas.Effect>
+                                <DropShadowEffect/>
+                            </Canvas.Effect>
+                        </Canvas>
+                        <Label Content="E-mail:versity_gate@yahoo.com" Foreground="Black" FontSize="20" HorizontalAlignment="Left" Margin="24,135,0,0" VerticalAlignment="Top" Width="253" FontFamily="Tw Cen MT Condensed Extra Bold" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="-0.308"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                        </Label>
+                        <Image x:Name="imgShowStudentPhoto" HorizontalAlignment="Left" Height="124" Margin="537,155,0,0" VerticalAlignment="Top" Width="137">
+                            <Image.Effect>
+                                <DropShadowEffect/>
+                            </Image.Effect>
+                            <Image.OpacityMask>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="Black" Offset="0"/>
+                                    <GradientStop Color="#FFD61919" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Image.OpacityMask>
+                        </Image>
+                        <Label Content="Surname:" HorizontalAlignment="Left" Margin="12,327,0,0" VerticalAlignment="Top" Width="82" FontWeight="Bold" FontSize="16"/>
+                        <Label Content="Name:" HorizontalAlignment="Left" Margin="11,378,0,0" VerticalAlignment="Top" Width="65" FontWeight="Bold" FontSize="16"/>
+                        <Label Content="Exam Set:" HorizontalAlignment="Left" Margin="9,429,0,0" VerticalAlignment="Top" Width="90" FontWeight="Bold" FontSize="16"/>
+                        <Label Name="lblResultSurname" Content="." HorizontalAlignment="Left" Margin="124,330,0,0" VerticalAlignment="Top" Width="162" FontWeight="Bold" FontSize="14"/>
+                        <Label Name="lblResultName" Content="." HorizontalAlignment="Left" Margin="124,380,0,0" VerticalAlignment="Top" Width="162" FontWeight="Bold" FontSize="14"/>
+                        <Label Name="lblExamResult" Content="." HorizontalAlignment="Left" Margin="124,429,0,0" VerticalAlignment="Top" Width="162" FontWeight="Bold" FontSize="14"/>
+                        <Label Content="Subjects:" HorizontalAlignment="Left" Margin="374,288,0,0" VerticalAlignment="Top" Width="79" FontWeight="Bold" FontSize="16"/>
+                        <Label Name="lblSubject1" Content="." HorizontalAlignment="Left" Margin="374,327,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold" FontSize="14"/>
+                        <Label Name="lblSubject2" Content="." HorizontalAlignment="Left" Margin="374,378,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold" FontSize="14"/>
+                        <Label Name="lblSubject3" Content="." HorizontalAlignment="Left" Margin="374,429,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold" FontSize="14"/>
+                        <Label Name="lblScore1" HorizontalAlignment="Left" Margin="499,329,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold" FontSize="14" Height="27"/>
+                        <Label Name="lblScore2" Content="." HorizontalAlignment="Left" Margin="499,378,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold" FontSize="14"/>
+                        <Label Name="lblScore3" Content="." HorizontalAlignment="Left" Margin="499,429,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold" FontSize="14"/>
+                        <Label Content="Total Score:" HorizontalAlignment="Left" Margin="374,478,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold" FontSize="16"/>
+                        <Label Content="Score:" HorizontalAlignment="Left" Margin="492,288,0,0" VerticalAlignment="Top" Width="58" FontWeight="Bold" FontSize="16"/>
+                        <Label Name="lblTotalScore" Content="." HorizontalAlignment="Left" Margin="499,478,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold" FontSize="14"/>
+                        <Label Content="Ondo Bypass Akure 08167675441 08062692500" Foreground="Black" FontSize="20" HorizontalAlignment="Left" Margin="18,195,0,0" VerticalAlignment="Top" Width="384" FontFamily="Tw Cen MT Condensed Extra Bold" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="-0.308"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                        </Label>
+                        <Label Content="Varsity Gate Resource Centre, 17 Sanmi Adeniran Street" Foreground="Black" FontSize="20" HorizontalAlignment="Left" Margin="19,166,0,0" VerticalAlignment="Top" Width="435" FontFamily="Tw Cen MT Condensed Extra Bold" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Height="33">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="-0.308"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                        </Label>
+                    </Grid>
+                    <Button x:Name="btnFindStudentResult" HorizontalAlignment="Left" Margin="440,632,0,0" VerticalAlignment="Top" Width="123" Height="36" Click="btnFindStudentResult_Click">
+                        <Button.Effect>
+                            <DropShadowEffect/>
+                        </Button.Effect>
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                <GradientStop Color="#FFD35A5A" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="1"/>
+                                <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <StackPanel Orientation="Horizontal" Width="176">
+                            <Image Source="edit-find.png" Stretch="Fill" Height="38" Width="39"/>
+                            <Label FontWeight="Bold" Content="Find Result" Width="73" Height="28"/>
+                        </StackPanel>
+
+                    </Button>
+                    <TextBox Name="txtStudentResultName" HorizontalAlignment="Left" FontWeight="Bold" Height="36" Margin="10,632,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="164" BorderThickness="5"/>
+                    <Button x:Name ="btnPrint" HorizontalAlignment="Left" Margin="583,632,0,0" VerticalAlignment="Top" Width="123" Height="36" Background="White" Click="btnPrint_Click">
+                        <Button.Effect>
+                            <DropShadowEffect/>
+                        </Button.Effect>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Height="27" Source="printerPicture.PNG" Stretch="Fill" Width="40"/>
+                            <Label Content="PRINT" FontWeight="Bold" Width="50" Height="27"></Label>
+                        </StackPanel>
+                    </Button>
+                    <Label Content="Label" HorizontalAlignment="Left" Margin="360,-326,0,0" VerticalAlignment="Top" Background="White" Foreground="White" Height="720" Width="2" RenderTransformOrigin="0.5,0.5">
+                        <Label.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Label.RenderTransform>
+                    </Label>
+                    <Label Content="DISPLAY STUDENT'S TEST INFORMATION" FontSize="14" Foreground="White" HorizontalAlignment="Left" Height="25" Margin="240,0,0,0" VerticalAlignment="Top" Width="294" FontFamily="Segoe UI Symbol" FontWeight="Bold"/>
+                    <Button Margin="1188,626,39,20" Click="Button_Click_2">
+                        <Button.Effect>
+                            <DropShadowEffect/>
+                        </Button.Effect>
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FFB23838" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <StackPanel Orientation="Horizontal">
+                        <Image Source="arrow-left-3.png" Stretch="Fill" Height="32" Width="52"/>
+                        <Label Content="Previous" Height="28" Width="70" FontWeight="Bold" FontSize="14"></Label>
+                        </StackPanel>
+
+
+                    </Button>
+                    <TextBox x:Name="txtStudentResultSurname" HorizontalAlignment="Left" FontWeight="Bold" Height="36" Margin="194,632,0,0" TextWrapping="Wrap" Text="Surname" VerticalAlignment="Top" Width="164" BorderThickness="5"/>
+                    <Label Content="Label" HorizontalAlignment="Left" Margin="357,69,0,-81" VerticalAlignment="Top" Background="Black" Foreground="White" Height="694" Width="2" RenderTransformOrigin="0.5,0.5">
+                        <Label.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Label.RenderTransform>
+                    </Label>
+                    <Label Content="Label" HorizontalAlignment="Left" Margin="357,115,0,-127" VerticalAlignment="Top" Background="Black" Foreground="White" Height="694" Width="2" RenderTransformOrigin="0.5,0.5">
+                        <Label.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Label.RenderTransform>
+                    </Label>
+                    <Label Content="Label" HorizontalAlignment="Left" Margin="358,161,0,-173" VerticalAlignment="Top" Background="Black" Foreground="White" Height="694" Width="2" RenderTransformOrigin="0.5,0.5">
+                        <Label.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Label.RenderTransform>
+                    </Label>
+                    <Label Content="Label" HorizontalAlignment="Left" Margin="356,16,0,-28" VerticalAlignment="Top" Background="Black" Foreground="White" Height="694" Width="2" RenderTransformOrigin="0.5,0.5">
+                        <Label.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Label.RenderTransform>
+                    </Label>
+
+                </Grid>
+            </TabItem>
+            
+        
+
+
+
+
+
+        </TabControl>
+        <Image Margin="-4,27,0,714" Source="sattt.PNG" Stretch="Fill" Grid.ColumnSpan="1">
+            <Image.Effect>
+                <DropShadowEffect ShadowDepth="10" BlurRadius="10"/>
+            </Image.Effect>
+            <Image.OpacityMask>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFC3A5A5" Offset="1"/>
+                </LinearGradientBrush>
+            </Image.OpacityMask>
+        </Image>
+        <TextBlock x:Name="RootText" Text="CBT-Guide" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="62" Width="307" FontSize="40" FontFamily="Rockwell Extra Bold" RenderTransformOrigin="0.454,0.842" Margin="598,-14,0,698">
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFF9F5F5" Offset="0.425"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+            <TextBlock.Effect>
+                <DropShadowEffect/>
+            </TextBlock.Effect>
+            <TextBlock.Triggers>
+                <EventTrigger RoutedEvent="TextBlock.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="RootText"
+                                             Storyboard.TargetProperty="Width"
+                                             From="500" To="0" Duration="0:0:5"
+                                             AutoReverse="True" RepeatBehavior="Forever"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </TextBlock.Triggers>
+        </TextBlock>
+        <TextBlock x:Name="myChangingColorText" Text="Varsity Gate" FontSize="40" Margin="585,4,485,693" FontFamily="Rockwell Extra Bold">
+            <TextBlock.Effect>
+                <DropShadowEffect BlurRadius="10" ShadowDepth="10"/>
+            </TextBlock.Effect>
+            <TextBlock.Foreground>
+                <SolidColorBrush x:Name="mySolidColorBrush" Color="Red"/>
+            </TextBlock.Foreground>
+            <TextBlock.Triggers>
+                <EventTrigger RoutedEvent="TextBlock.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName = "mySolidColorBrush"
+                                Storyboard.TargetProperty ="Color"
+                                From ="DarkOrange" To="SteelBlue" Duration="0:0:5"
+                                            AutoReverse="True" RepeatBehavior="Forever"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="myChangingColorText"
+                                             Storyboard.TargetProperty="Width"
+                                             From="0" To="500" Duration="0:0:3"
+                                             AutoReverse="True" RepeatBehavior="Forever"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </TextBlock.Triggers>
+        </TextBlock>
+
+
+    </Grid>
+</Window>
